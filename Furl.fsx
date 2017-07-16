@@ -43,3 +43,9 @@ let post url headers body =
 
 let bodyText (resp : HttpResponseMessage) =
     resp.Content.ReadAsStringAsync().Result
+
+let responseHeaders (resp:HttpResponseMessage) =
+    resp.Headers
+
+let isGood (resp : HttpResponseMessage) = 
+    resp.IsSuccessStatusCode
